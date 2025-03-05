@@ -1,5 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source : /
-    destination: /home/ubuntu/prime
+  - source: /
+    destination: /home/ec2-user/prime_app
+hooks:
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: ec2-user
